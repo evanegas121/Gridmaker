@@ -35,11 +35,14 @@ function addC() {
 //Remove a row
 function removeR() {
     // alert("Clicked Remove Row")
-    var table = document.getElementById("grid");
     numRows-=1;
     let removeRow = ''
     for(let i = 1 ; i <= numRows; i++){
-        removeRow += '<tr><td></td><tr>'
+        removeRow += '<tr>'
+    for(let j = 0 ; j <= numCols; j++){
+        removeRow += '<td></td>'
+        }
+        removeRow += '</tr>'
     }
     table.innerHTML = removeRow;
 }
