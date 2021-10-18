@@ -1,22 +1,34 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
-
+let table = document.getElementById("grid");
 //Add a row
 function addR() {
     // alert("Clicked Add Row")
-    var table = document.getElementById("grid");
     numRows+=1;
     let addRow = ''
     for(let i = 1 ; i <= numRows; i++){
-        addRow += '<tr> <td> </td> <tr>'
+        addRow += '<tr>'
+    for(let j = 0 ; j <= numCols; j++){
+        addRow += '<td></td>'
+        }
+        addRow += '</tr>'
     }
     table.innerHTML = addRow;
 
 }
 //Add a column
 function addC() {
-    alert("Clicked Add Col")
+    // alert("Clicked Add Col")
+    let addCol = ''
+    let tableRows = document.getElementsByTagName("tr");
+    numCols += 1
+    for (let i = 0; i <= numCols; i++){
+        addCol += '<td></td>'
+    }
+    for (let i = 0; i < tableRows.length; i++){
+        tableRows[i].innerHTML = addCol
+    }
  }
  
 
