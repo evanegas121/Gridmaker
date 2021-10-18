@@ -4,7 +4,7 @@ let colorSelected;
 
 //Add a row
 function addR() {
-    alert("Clicked Add Row")
+    // alert("Clicked Add Row")
     var table = document.getElementById("grid");
     numRows+=1;
     let addRow = ''
@@ -22,7 +22,14 @@ function addC() {
 
 //Remove a row
 function removeR() {
-    alert("Clicked Remove Row")
+    // alert("Clicked Remove Row")
+    var table = document.getElementById("grid");
+    numRows-=1;
+    let removeRow = ''
+    for(let i = 1 ; i <= numRows; i++){
+        removeRow += '<tr><td></td><tr>'
+    }
+    table.innerHTML = removeRow;
 }
 //Remove a column
 function removeC() {
