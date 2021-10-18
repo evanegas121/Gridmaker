@@ -48,7 +48,16 @@ function removeR() {
 }
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+    //alert("Clicked Remove Col")
+    let removeCol = ''
+    let tableRows = document.getElementsByTagName("tr");
+    numCols -= 1
+    for (let i = 0; i <= numCols; i++){
+        removeCol += '<td></td>'
+    }
+    for (let i = 0; i < tableRows.length; i++){
+        tableRows[i].innerHTML = removeCol
+    }
 }
 //sets global var for selected color
 function selected(){
