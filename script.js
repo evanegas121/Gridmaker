@@ -1,7 +1,7 @@
 let numRows = 0;
 let numCols = 0;
 let colorSelected; 
-
+let table = document.getElementById("grid");
 //Add a row
 function addR() {
     // alert("Clicked Add Row")
@@ -19,7 +19,16 @@ function addR() {
 }
 //Add a column
 function addC() {
-    alert("Clicked Add Col")
+    // alert("Clicked Add Col")
+    let addCol = ''
+    let tableRows = document.getElementsByTagName("tr");
+    numCols += 1
+    for (let i = 0; i <= numCols; i++){
+        addCol += '<td></td>'
+    }
+    for (let i = 0; i < tableRows.length; i++){
+        tableRows[i].innerHTML = addCol
+    }
  }
  
 
