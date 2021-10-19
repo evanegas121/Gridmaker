@@ -16,14 +16,10 @@ function addR() {
 //Add a column
 function addC() {
     // alert("Clicked Add Col")
-    let addCol = ''
-    let tableRows = document.getElementsByTagName("tr");
-    numCols += 1
-    for (let i = 0; i <= numCols; i++){
-        addCol += '<td></td>'
-    }
+    numCols += 1;
+    let tableRows = table.getElementsByTagName('tr');
     for (let i = 0; i < tableRows.length; i++){
-        tableRows[i].innerHTML = addCol
+        tableRows[i].insertCell();
     }
  }
  
