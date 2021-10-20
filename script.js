@@ -27,16 +27,8 @@ function addC() {
 //Remove a row
 function removeR() {
     // alert("Clicked Remove Row")
-    numRows-=1;
-    let removeRow = ''
-    for(let i = 1 ; i <= numRows; i++){
-        removeRow += '<tr>'
-    for(let j = 0 ; j <= numCols; j++){
-        removeRow += '<td></td>'
-        }
-        removeRow += '</tr>'
-    }
-    table.innerHTML = removeRow;
+    numRows -= 1
+    table.deleteRow(-1)
 }
 //Remove a column
 function removeC() {
