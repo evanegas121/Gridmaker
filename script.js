@@ -2,6 +2,7 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected; 
 let table = document.getElementById("grid");
+
 //Add a row
 function addR() {
     // alert("Clicked Add Row")
@@ -9,8 +10,9 @@ function addR() {
     var addRow = table.insertRow();
     var addCol;
     for (var i = 0; i <= numCols; i++){
-        addCol =addRow.insertCell()
+        addCol = addRow.insertCell()
     }
+    addClick()
 
 }
 //Add a column
@@ -21,6 +23,7 @@ function addC() {
     for (let i = 0; i < tableRows.length; i++){
         tableRows[i].insertCell();
     }
+    addClick()
  }
 
 //Remove a row
@@ -44,12 +47,24 @@ function selected(){
     console.log(colorSelected);
 }
 
+
 function fill(){
     //alert("Clicked Fill All")
     let tableCols =  table.getElementsByTagName('td')
-    for(i=0; tableCols.length;i++){
+    for(let i=0; i < tableCols.length;i++){
         tableCols[i].style.backgroundColor = colorSelected;
     }
+}
+
+function addClick(){
+    let color = table.getElementsByTagName("td")
+    for(let i = 0; i < color.length;i++){
+        color[i].addEventListener("click", colorfunction)
+    }
+}
+
+function colorfunction(e){
+    e.target.style.backgroundColor = colorSelected
 }
 
 function clearAll(){
@@ -59,3 +74,4 @@ function clearAll(){
 function fillU(){
     alert("Clicked Fill All Uncolored")
 }
+
