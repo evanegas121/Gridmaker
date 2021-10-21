@@ -22,7 +22,6 @@ function addC() {
         tableRows[i].insertCell();
     }
  }
- 
 
 //Remove a row
 function removeR() {
@@ -33,14 +32,10 @@ function removeR() {
 //Remove a column
 function removeC() {
     //alert("Clicked Remove Col")
-    let removeCol = ''
-    let tableRows = document.getElementsByTagName("tr");
-    numCols -= 1
-    for (let i = 0; i <= numCols; i++){
-        removeCol += '<td></td>'
-    }
+    numCols -= 1;
+    let tableRows = table.getElementsByTagName('tr');
     for (let i = 0; i < tableRows.length; i++){
-        tableRows[i].innerHTML = removeCol
+        tableRows[i].deleteCell(-1);
     }
 }
 //sets global var for selected color
