@@ -79,7 +79,6 @@ function fillU(){
     //alert("Clicked Fill All Uncolored")
     let tableCols =  table.getElementsByTagName('td')
     for(let i=0; i < tableCols.length;i++){
-       // var check = getComputedStyle(tableCols[i].backgroundColor)
        if (!tableCols[i].style.backgroundColor)
             tableCols[i].style.backgroundColor = colorSelected
     }
