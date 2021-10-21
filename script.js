@@ -45,7 +45,11 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    //alert("Clicked Fill All")
+    let tableCols =  table.getElementsByTagName('td')
+    for(i=0; tableCols.length;i++){
+        tableCols[i].style.backgroundColor = colorSelected;
+    }
 }
 
 function clearAll(){
