@@ -68,7 +68,11 @@ function colorfunction(e){
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    //alert("Clicked Clear All")
+    let tableCols =  table.getElementsByTagName('td')
+    for(let i=0; i < tableCols.length;i++){
+        tableCols[i].removeAttribute("style") ;
+    }
 }
 
 function fillU(){
